@@ -1,22 +1,465 @@
-.App {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+  overflow: hidden;
+}
+
+#omega {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+/* ====================MAIN LAYOUT====================================== */
+
+#mainModule {
+  /* border: 1px dotted red; */
+  width: 100%;
+  height: 100%;
+  max-width: 170vh;
+  max-height: 100vw;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}
+
+#upperRow {
+  /* border: 1px dotted red; */
+  height: 40%;
+  display: flex;
+}
+
+#upperLeft {
+  /* border: 1px dotted red; */
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #dddddd;
+}
+
+#upperRight {
+  /* border: 1px dotted red; */
+  width: 60%;
+  height: 100%;
+  overflow: hidden;
+  /* background: rgb(255, 217, 182); */
+}
+
+#lowerRow {
+  /* border: 1px dotted red; */
+  height: 60%;
+  overflow: hidden;
+}
+
+
+
+/* ================================================================== */
+/* =======================COMPONENT: Key=========================================== */
+
+.keyWrap {
+
+  width: 90%;
+
+  justify-content: center;
+
+}
+
+.key {
+
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+
+}
+
+.fillerDiv {
+  width: 70%;
+}
+
+.raiseOrFlattenKey {
+  width: 20%;
+
+}
+
+
+
+.tonic {
+
+  width: 20%;
+  height: 40px;
+  line-height: 38px;
+  text-transform: uppercase;
+  background: white;
+
+}
+
+.mode {
+
+  width: 70%;
+  height: 40px;
+  line-height: 38px;
+  background: white;
+}
+
+/* =======================MODALS============================================ */
+
+
+.modal {
+
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+
+  padding: 20px;
+  border: 1px solid #888;
+
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+#tonicModal {
+  display: none; /* Hidden by default */
+}
+
+#modeModal {
+  display: none; /* Hidden by default */
+}
+
+.blackKeys {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 5px;
   color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.whiteKeys {
+  display: flex;
+  justify-content: center;
 }
+
+.keys {
+  width: 14%;
+  height: 60px;
+  line-height: 60px;
+  background: blue;
+  margin: 2px;
+}
+
+.blk {
+  background: black;
+  color: white;
+}
+
+.wht {
+  background: white;
+  color: black;
+}
+
+.filler {
+  opacity: 0;
+}
+/* ===================COMPONENTS: Chords=============================== */
+
+.chordsContainer {
+  position: relative;
+
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.chordsWrap {
+  display: flex;
+  width: 90%;
+  height: 50%;
+  justify-content: center;
+}
+
+.chords {
+  /* border: 1px solid black; */
+  width: 14.2%;
+  height: 100%;
+  text-align: center;
+}
+
+.maj {
+  background: #ff9090;
+}
+
+.min {
+  background: #b5e0e4;
+}
+
+.aug {
+  background: rgb(206, 66, 247);
+}
+
+.dim {
+  background: #65fc94;
+}
+
+
+.chordName {
+  height: 70%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chordNumeral {
+
+  height: 30%;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+/* ===========COMPONENTS: Fretboard================================== */
+
+#fretboardContainer {
+
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#fretboardWrap {
+
+  display: flex;
+  justify-content: center;
+  width: 97%;
+  height: 70%;
+
+
+}
+
+.fretLegend {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 97%;
+  height: 10%;
+
+
+  text-align: center;
+}
+
+.fretLegend:last-child {
+  margin-top: 0.3%;
+}
+
+#openString {
+  width: 4%;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.openStringColumn {
+
+  height: 16.6%;
+  display: flex;
+  align-items: center;
+}
+
+#fretboard {
+  width: 95%;
+  border-left: 2px solid green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+.strings {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+  border-bottom: 1px solid red;
+}
+
+.fretRows {
+  width: 100%;
+  height: 16.6%;
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.rowDigit {
+  width: 8.3%;
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dots {
+  border-radius: 50%;
+  background: #dddddd;
+  color: black;
+
+
+  width: 50%;
+  height: 90%;
+  vertical-align: middle;
+  text-align: center;
+  z-index: 1;
+  display: none;
+}
+
+.show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rootnote {
+  background: black;
+  color: white;
+  border: none;
+}
+
+.thirdnote {
+  background: #ffeb96;
+  color: black;
+  border: none;
+}
+
+.fifthnote {
+  background: #ff9090;
+  color: black;
+  border: none;
+}
+
+.seventhnote {
+
+  background: #b5e0e4;
+  color: black;
+  border: none;
+}
+
+.open {
+  width: 100%;
+  height: 90%;
+  border-radius: 0%;
+  color: black;
+  background: white;
+}
+
+
+
+
+
+#underTheActualFretboard {
+
+  width: 95%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.utafFiller0 {
+  width: 4%;
+}
+
+.utafFiller1 {
+  width: 8.3%;
+}
+
+.utafFiller2 {
+  width: 16.6%;
+}
+
+.fretNum {
+
+  width: 8.3%;
+}
+
+#colorLegend {
+  border: 1px dotted #d9d9d9;
+
+  width: 94%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.singleColor {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sym {
+  width: 10%;
+  height: 15px;
+  /* margin-right: 3px; */
+}
+
+/* ========================== */

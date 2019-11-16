@@ -1,8 +1,19 @@
+:root {
+  --color-red : #ff6767;
+  --color-blu : #6dc1c1;
+  --color-ylw : #ffea7e;
+  --color-grn : #5dff99;
+  --color-gry : #dddddd;
+  --color-prp : #ce42f7;
+
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 16px;
   overflow: hidden;
 }
@@ -17,11 +28,11 @@
 /* ====================MAIN LAYOUT====================================== */
 
 #mainModule {
-  /* border: 1px dotted red; */
+
   width: 100%;
   height: 100%;
-  max-width: 170vh;
-  max-height: 100vw;
+  max-width: 200vh;
+  max-height: 90vw;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -29,13 +40,13 @@
 }
 
 #upperRow {
-  /* border: 1px dotted red; */
+
   height: 40%;
   display: flex;
 }
 
 #upperLeft {
-  /* border: 1px dotted red; */
+
   width: 40%;
   height: 100%;
   overflow: hidden;
@@ -46,15 +57,15 @@
 }
 
 #upperRight {
-  /* border: 1px dotted red; */
+
   width: 60%;
   height: 100%;
   overflow: hidden;
-  /* background: rgb(255, 217, 182); */
+
 }
 
 #lowerRow {
-  /* border: 1px dotted red; */
+
   height: 60%;
   overflow: hidden;
 }
@@ -67,9 +78,11 @@
 .keyWrap {
 
   width: 90%;
-
+  height: 90%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-
+  align-items: center;
 }
 
 .key {
@@ -77,36 +90,68 @@
   display: flex;
   justify-content: space-around;
   text-align: center;
+  width: 100%;
+  height: 30%;
+  margin-bottom: 0.5%;
+}
 
+
+
+.raiseOrFlattenKey {
+  height: 100%;
+  width: 20%;
+
+
+  font-size: 2.5em;
+  font-weight: lighter;
+}
+
+.raiseOrFlattenKey:hover,
+.raiseOrFlattenKey:focus {
+  color: var(--color-red)
+}
+
+.raiseOrFlattenKey:active {
+  color: var(--color-red)
+}
+
+.flatten{
+  transform: rotateX(180deg);
 }
 
 .fillerDiv {
   width: 70%;
 }
 
-.raiseOrFlattenKey {
-  width: 20%;
-
+.console {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
 }
 
+.console:hover {
+  border: 2px solid var(--color-red);
+}
 
+.console:active {
+  border: none;
+  background: var(--color-red)
+}
 
 .tonic {
-
   width: 20%;
-  height: 40px;
-  line-height: 38px;
   text-transform: uppercase;
-  background: white;
 
 }
 
 .mode {
 
   width: 70%;
-  height: 40px;
-  line-height: 38px;
-  background: white;
+
+
+
 }
 
 /* =======================MODALS============================================ */
@@ -122,27 +167,50 @@
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
 }
 
 /* Modal Content */
-.modal-content {
-  position: relative;
-  background-color: #fefefe;
+.tonic-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color-blu);
 
-  padding: 20px;
-  border: 1px solid #888;
+  width: 90%;
+  height: 80%;
+  max-height: 60vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+
+  width: 90%;
+  height: 80%;
+  max-height: 60vw;
 
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 /* The Close Button */
 .close {
-  color: #aaaaaa;
+  color: #466667;
   position: absolute;
   top: 0;
   right: 10px;
@@ -157,6 +225,10 @@
   cursor: pointer;
 }
 
+.close:active {
+  color: var(--color-ylw);
+}
+
 
 #tonicModal {
   display: none; /* Hidden by default */
@@ -166,39 +238,104 @@
   display: none; /* Hidden by default */
 }
 
+
+
 .blackKeys {
   display: flex;
-  justify-content: center;
-  margin-bottom: 5px;
+  justify-content: space-between;
+  margin-bottom: 1%;
   color: white;
+
+  height: 30%;
+  width: 78%;
 }
 
 .whiteKeys {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+  height: 30%;
+  width: 90%;
+
 }
 
 .keys {
-  width: 14%;
-  height: 60px;
-  line-height: 60px;
-  background: blue;
-  margin: 2px;
+
+
+
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .blk {
   background: black;
   color: white;
+  width: 15.6%;
 }
+
+.blk:hover {
+  background: #777777;
+  border: none;
+}
+
 
 .wht {
   background: white;
+  color: black;
+  width: 13.5%;
+}
+
+.wht:hover {
+  background: #dddddd;
+}
+
+.keys:active {
+  background: var(--color-ylw);
   color: black;
 }
 
 .filler {
   opacity: 0;
 }
+
+/* mode content */
+
+#modeColumn1 {
+
+  width: 40%;
+  height: 80%;
+  margin-right: 3%;
+}
+
+#modeColumn2 {
+
+  width: 40%;
+  height: 80%;
+}
+
+.modeList {
+
+  height: 22%;
+  margin-bottom: 4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-blu);
+}
+
+.modeList:hover {
+  background: var(--color-grn);
+  color: black;
+}
+
+.modeList:active {
+  background: var(--color-ylw);
+  color: black;
+}
+
 /* ===================COMPONENTS: Chords=============================== */
 
 .chordsContainer {
@@ -228,19 +365,19 @@
 }
 
 .maj {
-  background: #ff9090;
+  background: var(--color-red);
 }
 
 .min {
-  background: #b5e0e4;
+  background: var(--color-blu);
 }
 
 .aug {
-  background: rgb(206, 66, 247);
+  background: var(--color-prp);
 }
 
 .dim {
-  background: #65fc94;
+  background: var(--color-ylw);
 }
 
 
@@ -321,7 +458,7 @@
 
 #fretboard {
   width: 95%;
-  border-left: 2px solid green;
+  border-left: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -334,7 +471,7 @@
   position: absolute;
   height: 50%;
   width: 100%;
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid grey;
 }
 
 .fretRows {
@@ -350,7 +487,7 @@
   width: 8.3%;
   border-width: 0 1px 0 1px;
   border-style: solid;
-  border-color: green;
+  border-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -360,7 +497,7 @@
   border-radius: 50%;
   background: #dddddd;
   color: black;
-
+  font-size: 0.8em;
 
   width: 50%;
   height: 90%;
@@ -383,20 +520,20 @@
 }
 
 .thirdnote {
-  background: #ffeb96;
+  background: var(--color-blu);
   color: black;
   border: none;
 }
 
 .fifthnote {
-  background: #ff9090;
+  background: var(--color-red);
   color: black;
   border: none;
 }
 
 .seventhnote {
 
-  background: #b5e0e4;
+  background: var(--color-ylw);
   color: black;
   border: none;
 }
@@ -436,30 +573,70 @@
 }
 
 .fretNum {
-
+  font-size: 0.7em;
   width: 8.3%;
+}
+
+.fretLegend {
+  height: 8%;
+  margin-bottom: 1px;
 }
 
 #colorLegend {
   border: 1px dotted #d9d9d9;
 
   width: 94%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .singleColor {
   width: 25%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .sym {
-  width: 10%;
-  height: 15px;
+  width: 11%;
+  height: 100%;
   /* margin-right: 3px; */
 }
 
+.colorLegend {
+    font-size: 0.8em;
+}
 /* ========================== */
+
+
+@media only screen and (min-width: 768px) {
+
+  * {
+    font-size: 20px
+  }
+
+
+}
+
+@media only screen and (min-width: 992px) {
+  * {
+    font-size: 24px
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  * {
+    font-size: 30px
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  * {
+    font-size: 9px;
+  }
+}

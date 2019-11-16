@@ -111,10 +111,10 @@ function Fretboard (props) {
       </div>
       <div className="fretLegend">
         <div id="colorLegend">
-          <div className="singleColor"><div className="dots show sym rootnote"></div> <span>= root</span></div>
-          <div className="singleColor"><div className="dots show sym thirdnote"></div> <span>= third</span></div>
-          <div className="singleColor"><div className="dots show sym fifthnote"></div> <span>= fifth</span></div>
-          <div className="singleColor"><div className="dots show sym seventhnote"></div> <span>= seventh</span></div>
+          <div className="singleColor"><div className="dots show sym rootnote"></div> <span className="colorLegend">= root</span></div>
+          <div className="singleColor"><div className="dots show sym thirdnote"></div> <span className="colorLegend">= third</span></div>
+          <div className="singleColor"><div className="dots show sym fifthnote"></div> <span className="colorLegend">= fifth</span></div>
+          <div className="singleColor"><div className="dots show sym seventhnote"></div> <span className="colorLegend">= seventh</span></div>
         </div>
       </div>
     </div>

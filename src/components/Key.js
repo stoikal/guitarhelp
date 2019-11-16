@@ -20,7 +20,7 @@ function Key (props) {
     let k      = t.toLowerCase();
     let abc    = props.notesArray.slice(props.notesArray.indexOf(t));
     let intv   = m.intervals;
-    
+
     let arr    = [];
 
 
@@ -41,11 +41,13 @@ function Key (props) {
   const handleModeChange = (num) => {
     let m = props.modes[num];
     changeKey(props.scale.tonic,m);
+    closeModal();
   }
 
   const handleTonicChange = (t) => {
     let m = props.modes[props.scale.mode.num - 1];
     changeKey(t,m);
+    closeModal();
   }
 
   const handleKeyRaise = () => {
@@ -59,14 +61,28 @@ function Key (props) {
   }
 
 
-  const modeList = props.modes.map((obj, i) => {
+
+
+  const modeColumn1 = ["Ionian / major","Dorian","Phrygian","Lydian"].map((str, i) => {
     return (
       <div
-        key={obj.name}
-        className={obj.isMajor ? "majorModes" : "minorModes"}
+        key={str}
+        className="modeList"
         onClick={() => {handleModeChange(i,null)}}
       >
-        {obj.name}
+        {str}
+      </div>
+    )
+  });
+
+  const modeColumn2 = ["Myxolydian","Aeolian / natural minor","Locrian"].map((str, i) => {
+    return (
+      <div
+        key={str}
+        className="modeList"
+        onClick={() => {handleModeChange(i+4,null)}}
+      >
+        {str}
       </div>
     )
   });
@@ -74,33 +90,37 @@ function Key (props) {
   return (
     <div className="keyWrap">
         <div className="key">
-          <div className="raiseOrFlattenKey" ><span onClick={handleKeyRaise}> ▲ </span></div>
+          <div className="raiseOrFlattenKey" onClick={handleKeyRaise}>
+            ^
+          </div>
           <div className="fillerDiv"></div>
         </div>
 
         <div className="key">
-            <div className="tonic" onClick={openTonicModal}>
+            <div className="console tonic" onClick={openTonicModal}>
               { props.modes[props.scale.mode.num - 1].sharps.indexOf(props.scale.tonic) < 0 ? props.eqvl[props.scale.tonic] : props.scale.tonic  }
             </div>
-            <div className="mode" onClick={openModeModal}>
+            <div className="console mode" onClick={openModeModal}>
               { props.modes[props.scale.mode.num - 1].name}
             </div>
         </div>
 
         <div className="key">
-          <div className="raiseOrFlattenKey" onClick={handleKeyFlatten}> ▼</div>
+          <div className="raiseOrFlattenKey flatten" onClick={handleKeyFlatten}>
+            ^
+          </div>
           <div className="fillerDiv"></div>
 
         </div>
 
         {/* MODAL BOX */}
         <div className="modal" id="tonicModal">
-          <div className="modal-content">
+          <div className="tonic-content">
             <span className="close" onClick={closeModal}>&times;</span>
             <div className="blackKeys">
               <div className="keys blk" onClick={(e) => handleTonicChange("c♯",null)}>{props.modes[props.scale.mode.num - 1].sharps.indexOf("c♯") < 0 ? props.eqvl["c♯"].toUpperCase() : "C♯"}</div>
               <div className="keys blk" onClick={(e) => handleTonicChange("d♯",null)}>{props.modes[props.scale.mode.num - 1].sharps.indexOf("d♯") < 0 ? props.eqvl["d♯"].toUpperCase() : "D♯"}</div>
-              <div className="keys filler"></div>
+              <div className="keys blk filler"></div>
               <div className="keys blk" onClick={(e) => handleTonicChange("f♯",null)}>{props.modes[props.scale.mode.num - 1].sharps.indexOf("f♯") < 0 ? props.eqvl["f♯"].toUpperCase() : "F♯"}</div>
               <div className="keys blk" onClick={(e) => handleTonicChange("g♯",null)}>{props.modes[props.scale.mode.num - 1].sharps.indexOf("g♯") < 0 ? props.eqvl["g♯"].toUpperCase() : "G♯"}</div>
               <div className="keys blk" onClick={(e) => handleTonicChange("a♯",null)}>{props.modes[props.scale.mode.num - 1].sharps.indexOf("a♯") < 0 ? props.eqvl["a♯"].toUpperCase() : "A♯"}</div>
@@ -118,10 +138,14 @@ function Key (props) {
         </div>
 
         <div className="modal" id="modeModal">
-          <div className="modal-content">
+          <div className="mode-content">
             <span className="close" onClick={closeModal}>&times;</span>
-            {modeList}
-
+            <div id="modeColumn1">
+              {modeColumn1}
+            </div>
+            <div id="modeColumn2">
+              {modeColumn2}
+            </div>
           </div>
         </div>
     </div>

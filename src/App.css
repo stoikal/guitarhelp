@@ -31,8 +31,8 @@
 
   width: 100%;
   height: 100%;
-  max-width: 200vh;
-  max-height: 90vw;
+  max-width: 170vh;
+  max-height: 70vw;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -466,6 +466,14 @@
 }
 
 
+.rowDigit:nth-child(3),
+.rowDigit:nth-child(5),
+.rowDigit:nth-child(7),
+.rowDigit:nth-child(9),
+.rowDigit:nth-child(12)
+   {
+  /* background: #e5ffe5; */
+}
 
 .strings {
   position: absolute;
@@ -495,6 +503,7 @@
 
 .dots {
   border-radius: 50%;
+  /* border: 1px solid black; */
   background: #dddddd;
   color: black;
   font-size: 0.8em;
@@ -516,26 +525,26 @@
 .rootnote {
   background: black;
   color: white;
-  border: none;
+  /* border: none; */
 }
 
 .thirdnote {
   background: var(--color-blu);
   color: black;
-  border: none;
+  /* border: none; */
 }
 
 .fifthnote {
   background: var(--color-red);
   color: black;
-  border: none;
+  /* border: none; */
 }
 
 .seventhnote {
 
   background: var(--color-ylw);
   color: black;
-  border: none;
+  /* border: none; */
 }
 
 .open {
@@ -544,6 +553,7 @@
   border-radius: 0%;
   color: black;
   background: white;
+  border: none;
 }
 
 
@@ -627,7 +637,22 @@
   * {
     font-size: 24px
   }
+
+  #upperLeft {
+
+    width: 35%;
+
+  }
+
+  #upperRight {
+
+    width: 65%;
+
+
+  }
 }
+
+
 
 @media only screen and (min-width: 1200px) {
   * {

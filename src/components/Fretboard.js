@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function Fretboard({ scale, eqvl, notes }) {
   const row1 = ['f', 'f♯', 'g', 'g♯', 'a', 'a♯', 'b', 'c', 'c♯', 'd', 'd♯', 'e'];

@@ -52,13 +52,9 @@ function MainModule () {
 
   return (
     <div id="mainModule">
-
-
       <div id="upperRow">
-
         <div id="upperLeft">
           <Key
-
             modes= {modes}
             scale= {key}
             setNotes = {setNotes}
@@ -69,7 +65,6 @@ function MainModule () {
             nameToNum= {nameToNum}
           />
         </div>
-
         <div id="upperRight">
           <Chords
             notes={notes}
@@ -79,10 +74,7 @@ function MainModule () {
           />
 
         </div>
-
       </div>
-
-
       <div id="lowerRow">
         <Fretboard
           scale     = {key}
@@ -90,10 +82,6 @@ function MainModule () {
           eqvl    = {equivalents}
         />
       </div>
-
-
-
-
     </div>
   )
 }

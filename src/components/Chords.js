@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 function Chords (props) {
 
   const chordList = props.notes.map((str, i) => {
@@ -9,7 +7,6 @@ function Chords (props) {
     switch (props.chords[i]) {
       case "min":
         quality = "m";
-
         break;
       case "maj":
         quality = "";
@@ -22,6 +19,7 @@ function Chords (props) {
         break;
       default: quality = props.chords[i]
     }
+
     return (
       <div key={str + i} className={`chords ${props.chords[i]}`}>
         <div className={`chordName ${props.chords[i]}`}>
@@ -38,11 +36,9 @@ function Chords (props) {
 
   return (
     <div className="chordsContainer">
-
       <div className="chordsWrap">
         {chordList}
       </div>
-
     </div>
   )
 }

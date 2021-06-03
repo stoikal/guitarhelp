@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/scalehelper/static/css/main.01d0d02e.chunk.css",
+    "main.js": "/scalehelper/static/js/main.d7a4f261.chunk.js",
+    "main.js.map": "/scalehelper/static/js/main.d7a4f261.chunk.js.map",
+    "runtime-main.js": "/scalehelper/static/js/runtime-main.38e01802.js",
+    "runtime-main.js.map": "/scalehelper/static/js/runtime-main.38e01802.js.map",
+    "static/js/2.5f9c56c7.chunk.js": "/scalehelper/static/js/2.5f9c56c7.chunk.js",
+    "static/js/2.5f9c56c7.chunk.js.map": "/scalehelper/static/js/2.5f9c56c7.chunk.js.map",
+    "index.html": "/scalehelper/index.html",
+    "precache-manifest.c05afd3149d2e7a314d4f9ef8f5ca828.js": "/scalehelper/precache-manifest.c05afd3149d2e7a314d4f9ef8f5ca828.js",
+    "service-worker.js": "/scalehelper/service-worker.js",
+    "static/css/main.01d0d02e.chunk.css.map": "/scalehelper/static/css/main.01d0d02e.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.38e01802.js",
+    "static/js/2.5f9c56c7.chunk.js",
+    "static/css/main.01d0d02e.chunk.css",
+    "static/js/main.d7a4f261.chunk.js"
+  ]
+}

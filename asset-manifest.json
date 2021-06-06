@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/scalehelper/static/css/main.01d0d02e.chunk.css",
-    "main.js": "/scalehelper/static/js/main.a455b182.chunk.js",
-    "main.js.map": "/scalehelper/static/js/main.a455b182.chunk.js.map",
-    "runtime-main.js": "/scalehelper/static/js/runtime-main.38e01802.js",
-    "runtime-main.js.map": "/scalehelper/static/js/runtime-main.38e01802.js.map",
-    "static/js/2.5f9c56c7.chunk.js": "/scalehelper/static/js/2.5f9c56c7.chunk.js",
-    "static/js/2.5f9c56c7.chunk.js.map": "/scalehelper/static/js/2.5f9c56c7.chunk.js.map",
-    "index.html": "/scalehelper/index.html",
-    "precache-manifest.77ea6bb79db57c0475d195401c8a2a65.js": "/scalehelper/precache-manifest.77ea6bb79db57c0475d195401c8a2a65.js",
-    "service-worker.js": "/scalehelper/service-worker.js",
-    "static/css/main.01d0d02e.chunk.css.map": "/scalehelper/static/css/main.01d0d02e.chunk.css.map"
+    "main.css": "/guitarhelp/static/css/main.eeb17c22.chunk.css",
+    "main.js": "/guitarhelp/static/js/main.cb5a840f.chunk.js",
+    "main.js.map": "/guitarhelp/static/js/main.cb5a840f.chunk.js.map",
+    "runtime-main.js": "/guitarhelp/static/js/runtime-main.078a9789.js",
+    "runtime-main.js.map": "/guitarhelp/static/js/runtime-main.078a9789.js.map",
+    "static/js/2.5f9c56c7.chunk.js": "/guitarhelp/static/js/2.5f9c56c7.chunk.js",
+    "static/js/2.5f9c56c7.chunk.js.map": "/guitarhelp/static/js/2.5f9c56c7.chunk.js.map",
+    "index.html": "/guitarhelp/index.html",
+    "precache-manifest.d21c7e9c4bf4dccf1b9052eb2ebb71f6.js": "/guitarhelp/precache-manifest.d21c7e9c4bf4dccf1b9052eb2ebb71f6.js",
+    "service-worker.js": "/guitarhelp/service-worker.js",
+    "static/css/main.eeb17c22.chunk.css.map": "/guitarhelp/static/css/main.eeb17c22.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.38e01802.js",
+    "static/js/runtime-main.078a9789.js",
     "static/js/2.5f9c56c7.chunk.js",
-    "static/css/main.01d0d02e.chunk.css",
-    "static/js/main.a455b182.chunk.js"
+    "static/css/main.eeb17c22.chunk.css",
+    "static/js/main.cb5a840f.chunk.js"
   ]
 }

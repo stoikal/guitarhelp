@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5e40a4a92a211bafa84fafafbaa15ab3",
+    "revision": "b75b6552ebdf02e41f5835a2ded23fc9",
     "url": "/guitarhelp/index.html"
   },
   {
-    "revision": "c2d9d350cb74178a7015",
+    "revision": "b4568a0dd9a422a01969",
     "url": "/guitarhelp/static/css/main.eeb17c22.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/guitarhelp/static/js/2.5f9c56c7.chunk.js"
   },
   {
-    "revision": "c2d9d350cb74178a7015",
-    "url": "/guitarhelp/static/js/main.cb5a840f.chunk.js"
+    "revision": "b4568a0dd9a422a01969",
+    "url": "/guitarhelp/static/js/main.5c5fe1fd.chunk.js"
   },
   {
     "revision": "3a46ea2f0d0b28cf60ce",

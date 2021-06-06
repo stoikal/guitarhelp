@@ -2,7 +2,7 @@
   "name": "guitarhelp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://weninglaks.github.io/scalehelper",
+  "homepage": "https://xlaks.github.io/guitarhelp",
   "dependencies": {
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
